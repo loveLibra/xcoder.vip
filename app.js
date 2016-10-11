@@ -27,6 +27,4 @@ app.set('views', path.join(__dirname, 'views'));
 // router dispatcher
 dispatcher(app);
 
-app.listen(3000, () => {
-    console.info('Xcoder start at port 3000');
-});
+app.listen(3000);
