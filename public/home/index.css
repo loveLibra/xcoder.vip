@@ -1,0 +1,60 @@
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+p {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font: 17px/1.5 "Lucida Grande", "Lucida Sans Unicode", Helvetica, Arial, Verdana, sans-serif;
+    color: #33333d;
+    background: #fff;
+}
+
+.top {
+    height: 100%;
+}
+
+.heading {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    text-align: center;
+    margin-top: -120px;
+}
+
+.avatar {
+    display: block;
+    height: 200px;
+    width: 200px;
+    margin: 0 auto;
+    background: url('./img/avatar.png') no-repeat;
+    background-size: 100%;
+}
+
+.welcome {
+    font-size: 16px;
+    line-height: 40px;
+}
+
+.welcome .console {
+    color: #e9b757;
+}
+
+.welcome .log {
+    color: #34c3c9;
+}
+
+.welcome .content {
+    color: #c06135;
+}
+
+/*.welcome em {
+    font: 30px 'Italiana', sans-serif;
+    text-shadow: 0 0 10px;
+}*/
