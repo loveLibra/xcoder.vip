@@ -5,26 +5,28 @@
  */
 'use strict';
 
-const express = require('express');
-const bodyParser = require('body-parser');
+const http = require('http');
 const path = require('path');
-const at = require('art-template');
 
-const dispatcher = require('./dispatcher');
+const koa = require('koa');
+const hbs = require('koa-hbs');
+const serve = require('koa-static');
 
-const app = express();
+let app = new koa();
 
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended: true}));
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(hbs.middleware({
+    viewPath: __dirname + '/view',
+    extname: '.hbs',
+    partialsPath: __dirname + '/view/partial',
+    defaultLayout: 'layout'
+}));
 
-// set view engine
-at.config('extname', '.html');
-app.engine('.html', at.__express);
-app.set('view engine', 'html');
-app.set('views', path.join(__dirname, 'views'));
+app.use(serve(__dirname + '/public'));
 
-// router dispatcher
-dispatcher(app);
+require('./dispatcher')(app);
 
-app.listen(3000);
+// http.createServer(app.callback()).listen(3000);
+
+app.listen(3000, () => {
+    console.log('xcoder power by koa2');
+});

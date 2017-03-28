@@ -5,8 +5,14 @@
  */
 'use strict';
 
+const router = require('koa-router')();
+
+const home = require('./controller/home');
+
 module.exports = app => {
-    app.use('/', (req, res) => {
-        res.render('home');
-    });
+
+    // 首页
+    router.use('/', home.routes());
+
+    app.use(router.routes()).use(router.allowedMethods());
 };
