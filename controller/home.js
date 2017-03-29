@@ -9,7 +9,7 @@ router.get('/', async (ctx, next) => {
             '/home/index.css'
         ],
         script: [
-            'http://cdn.bootcss.com/jquery/3.2.1/jquery.min.js',
+            '//cdn.bootcss.com/jquery/3.2.1/jquery.min.js',
             '/home/barrage.js',
             '/home/index.js'
         ]
