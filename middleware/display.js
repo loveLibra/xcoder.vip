@@ -16,11 +16,21 @@ module.exports = async (ctx, next) => {
         let title = option.title ? `${option.title} | ${config.title}` : config.title;
 
         if (option.style) {
-            option.style.map(style => config.static + style);
+            option.style.map(style => {
+                if (/^http:/.test(style)) {
+                    return style;
+                }
+                return config.static + style
+            });
         }
 
         if (option.script) {
-            option.script.map(script => config.static + style);
+            option.script.map(script => {
+                if (/^http:/.test(script)) {
+                    return script;
+                }
+                return config.static + script;
+            });
         }
 
         await ctx.render(view, _.extend(option, {

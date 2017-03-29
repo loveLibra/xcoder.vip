@@ -54,7 +54,19 @@ body {
     color: #c06135;
 }
 
-/*.welcome em {
-    font: 30px 'Italiana', sans-serif;
-    text-shadow: 0 0 10px;
-}*/
+/* 弹幕 */
+.barrage {
+    position: fixed;
+    box-sizing: border-box;
+    right: -200px;
+    background: rgba(20, 20, 20, 0.4);
+    height: 30px;
+    line-height: 30px;
+    padding: 0 20px;
+    border-radius: 15px;
+    white-space: nowrap;
+    max-width: 200px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 12px;
+}
