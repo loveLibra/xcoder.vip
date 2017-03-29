@@ -21,6 +21,8 @@ app.use(hbs.middleware({
     defaultLayout: 'layout'
 }));
 
+app.use(require('./middleware/display'));
+
 app.use(serve(__dirname + '/public'));
 
 require('./dispatcher')(app);
