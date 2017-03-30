@@ -6,7 +6,7 @@
 (function($) {
     var barrageOpt = {
         title: '想说点什么...',
-        speed: 5
+        speed: 8
     };
 
     // 随机色
@@ -38,6 +38,8 @@
 
         this.$el.append(barrage.$el);
 
+        barrage.$el.css('right', -barrage.$el.outerWidth()).removeClass('hidden');
+
         setTimeout(function() {
             barrage.$el.animate({
                 right: _width
@@ -52,7 +54,7 @@
 
         $.extend(this, barrageOpt, opt);
 
-        this.$el = $('<span class="barrage" style="color:' + opt.color + ';top:' + opt.top + ';">' + this.title + '</span>');
+        this.$el = $('<span class="barrage hidden" style="color:' + opt.color + ';top:' + opt.top + ';">' + this.title + '</span>');
     }
 
     $.fn.barrage = function(opt) {

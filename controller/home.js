@@ -6,6 +6,7 @@ router.get('/', async (ctx, next) => {
     await ctx.display('home', {
         title: 'Welcome',
         style: [
+            '/global/css/font-awesome.min.css',
             '/home/index.css'
         ],
         script: [
