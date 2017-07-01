@@ -11,6 +11,7 @@ router.get('/', async (ctx, next) => {
         ],
         script: [
             '//cdn.bootcss.com/jquery/3.2.1/jquery.min.js',
+            '/global/console.js',
             '/home/barrage.js',
             '/home/index.js'
         ]
